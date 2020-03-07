@@ -7,13 +7,15 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="351dp"
-        android:layout_height="209dp"
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="212dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginBottom="420dp"
-        android:text="Who is the 44th president of the Uniteed State of America"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="323dp"
         android:textAlignment="center"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,6 +24,22 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.201" />
+
+    <TextView
+        android:id="@+id/flashcard_answer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        android:textSize="40sp"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorPrimaryDark"
+        android:elevation="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
 
     <ImageView
         android:id="@+id/ic_card_card"

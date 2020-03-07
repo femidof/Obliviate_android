@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="620dp"
+        android:layout_marginBottom="534dp"
         android:hint="Enter The Question Here" />
 
     <EditText
@@ -19,17 +19,15 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="447dp"
+        android:layout_marginBottom="364dp"
         android:hint="Enter The Answer Here" />
 
     <ImageView
         android:id="@+id/ic_save"
         android:layout_width="71dp"
         android:layout_height="62dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="321dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="25dp"
         android:src="@drawable/ic_iconsave"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -40,8 +38,8 @@
         android:layout_height="62dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_close"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
