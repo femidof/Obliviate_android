@@ -1,7 +1,7 @@
 ## Obliviate
 
 ### App Description
-<img src="https://media.giphy.com/media/StWl9aMpoNNgrieslQ/giphy.gif" width=200> <img src="https://media.giphy.com/media/PmjPekDZSgSuC45EJ6/giphy.gif" width=200><br>
+<img src="https://media.giphy.com/media/StWl9aMpoNNgrieslQ/giphy.gif" width=200>   <img src="https://media.giphy.com/media/PmjPekDZSgSuC45EJ6/giphy.gif" width=200><br>
 
 
 ## Required
