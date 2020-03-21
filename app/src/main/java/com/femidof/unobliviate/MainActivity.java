@@ -6,11 +6,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import
 
 public class MainActivity extends AppCompatActivity {
+    List<Flashcard> allFlashcards;
+    FlashcardDatabase flashcardDatabase;
+    int currentCardDisplayedIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        allFlashcards = flashcardDatabase.getAllCards();
+        flashcardDatabase = new FlashcardDatabase(getApplicationContext());
+        if (allFlashcards != null && allFlashcards.size() > 0) {
+            ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(0).getQuestion());
+            ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(0).getAnswer());
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -45,6 +55,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.next_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // advance our pointer index so we can show the next card
+                currentCardDisplayedIndex++;
+
+                // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
+                if (currentCardDisplayedIndex > allFlashcards.size() - 1) {
+                    currentCardDisplayedIndex = 0;
+                }
+
+                // set the question and answer TextViews with data from the database
+                ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
+                ((TextView) findViewById(R.id.flashcard_answer)).setText(allFlashcards.get(currentCardDisplayedIndex).getAnswer());
+            }
+        });
 
 
 
@@ -62,6 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
             question.setText(string1);
             answer.setText(string2);
+            flashcardDatabase.insertCard(new Flashcard(question, answer));
+            data.getExtras().getString("question");
+            data.getExtras().getString("answer");
+            allFlashcards = flashcardDatabase.getAllCards();
 
         }
     }
